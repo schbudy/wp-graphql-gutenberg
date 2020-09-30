@@ -861,6 +861,7 @@ if (!class_exists('WPGraphQLGutenberg')) {
 
         protected function resolve_blocks($blocks)
         {
+			$blocks = apply_filters('custom_graphql_gutenberg_resolve_blocks',$blocks);
             return array_map(
                 function ($block) {
                     if ($block['name'] === 'core/block') {
