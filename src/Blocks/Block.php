@@ -21,6 +21,7 @@ class Block implements ArrayAccess {
 
 				$block['blockName'] = 'core/freeform';
 			}
+			$block['attrs']['id'] .= $post_id;
 
 			$result[] = new Block($block, $post_id, $registry, $order, $parent);
 			$order++;
