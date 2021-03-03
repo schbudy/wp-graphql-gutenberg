@@ -21,7 +21,9 @@ class Block implements ArrayAccess {
 
 				$block['blockName'] = 'core/freeform';
 			}
-			$block['attrs']['id'] .= $post_id;
+			if (isset($block['attrs']['id']) && substr($block['attrs']['name'], 0, 3) == 'acf') {
+                                $block['attrs']['id'] .= $post_id;
+                        }
 
 			$result[] = new Block($block, $post_id, $registry, $order, $parent);
 			$order++;
